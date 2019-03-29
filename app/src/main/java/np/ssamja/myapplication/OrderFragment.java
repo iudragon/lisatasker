@@ -1,14 +1,12 @@
 package np.ssamja.myapplication;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 
@@ -16,10 +14,10 @@ import android.widget.ListView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class RestaurantListFragment extends Fragment {
+public class OrderFragment extends Fragment {
 
 
-    public RestaurantListFragment() {
+    public OrderFragment() {
         // Required empty public constructor
     }
 
@@ -28,17 +26,16 @@ public class RestaurantListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_restaurant_list, container, false);
+        return inflater.inflate(R.layout.fragment_order, container, false);
     }
-
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        ListView restaurantListView = getActivity().findViewById(R.id.restaurant_list);
-        restaurantListView.setAdapter(new BaseAdapter() {
+        ListView listView = getActivity().findViewById(R.id.tray_list);
+        listView.setAdapter(new BaseAdapter() {
             @Override
             public int getCount() {
-                return 3;
+                return 4;
             }
 
             @Override
@@ -53,15 +50,8 @@ public class RestaurantListFragment extends Fragment {
 
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
-                return LayoutInflater.from(getActivity()).inflate(R.layout.list_item_restaurant, null);
-            }
-        });
+                return LayoutInflater.from(getActivity()).inflate(R.layout.list_item_tray, null);
 
-        restaurantListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getContext(), MealListActivity.class);
-                startActivity(intent);
             }
         });
     }
