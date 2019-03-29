@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="Created by Leo Trieu"
+        android:text="Created by PMY Tasker"
         android:textColor="@color/colorLightGray"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
