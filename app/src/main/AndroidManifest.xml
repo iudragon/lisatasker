@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".DriverMainActivity"></activity>
         <activity
             android:name=".PaymentActivity"
-            android:theme="@style/AppTheme.ActionBar"
-            android:parentActivityName=".CustomerMainActivity"></activity>
+            android:parentActivityName=".CustomerMainActivity"
+            android:theme="@style/AppTheme.ActionBar" />
         <activity
             android:name=".MealDetailActivity"
             android:parentActivityName=".MealListActivity"
@@ -26,8 +27,9 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDqxXl466uV1ZlzMo7Z5RVmQJe--KL_D_o" />
 
-        <activity android:name=".CustomerMainActivity"
-            android:launchMode="singleTop"/>
+        <activity
+            android:name=".CustomerMainActivity"
+            android:launchMode="singleTop" />
         <activity android:name=".SignInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
